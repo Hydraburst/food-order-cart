@@ -15,9 +15,10 @@ export default function HeaderCartButton(props) {
   const btnClasses = `${styles.button} ${btnIsBump ? styles.bump : ""}`;
 
   useEffect(() => {
-    if (items.length === 0) {
+    if (items.length === 0 || props.onCartActive) {
       return;
     }
+   
     setBtnIsBump(true);
 
     const timer = setTimeout(() => {
@@ -26,7 +27,7 @@ export default function HeaderCartButton(props) {
 
     return () => {
       clearTimeout(timer);
-    }
+    };
   }, [items]);
 
   return (

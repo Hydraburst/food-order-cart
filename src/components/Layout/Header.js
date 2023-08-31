@@ -8,7 +8,7 @@ export default function Header(props) {
     <React.Fragment>
       <header className={styles.header}>
         <h1>ReactMeals</h1>
-        <HeaderCartButton onClick ={props.onShowCart}/>
+        <HeaderCartButton onClick ={props.onShowCart} onCartActive={props.onCartOpen}/>
       </header>
       <div className={styles["main-image"]}>
         <img src={mealsImage} alt="meals" />
